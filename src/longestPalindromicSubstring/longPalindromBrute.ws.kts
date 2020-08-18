@@ -20,8 +20,8 @@ fun naiveLongestPalindromes(s: String): List<Pair<Int,String>> {
 }
 
 val p1 = naiveLongestPalindromes(s1)
-p1.maxBy { it.first }
+p1.maxByOrNull { it.first }
 val p2 = naiveLongestPalindromes(s2)
-p2.maxBy { it.first }
+p2.maxByOrNull { it.first }
 val p3 = naiveLongestPalindromes(s3)
-p3.maxBy { it.first }
+p3.maxByOrNull { it.first }

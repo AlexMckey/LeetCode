@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 fun fastLongestPalindromes(seq: String): String {
     val seqLen = seq.length
     val l = mutableListOf<Triple<Int,Int,Int>>()
@@ -44,7 +46,7 @@ fun fastLongestPalindromes(seq: String): String {
         l.add(Triple(x,e-1,d))
         println(l)
     }
-    val res = l.maxBy { it.first }!!
+    val res = l.maxByOrNull { it.first }!!
     println(res)
     return seq.substring(res.second - res.second, res.second)
 }

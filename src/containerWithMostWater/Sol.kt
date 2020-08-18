@@ -4,7 +4,8 @@ object Solution {
     // bruteforce algorithm - slowly
     fun maxAreaBrute(height: IntArray): Int {
         val len = height.size
-        return (0 until (len-1)).map { i -> (i+1 until len).map { j -> minOf(height[j],height[i]) * (j - i) }.max()!!}.max()!!
+        return (0 until (len-1)).map { i -> (i+1 until len).map { j -> minOf(height[j],height[i]) * (j - i) }
+                .maxOrNull()!!}.maxOrNull()!!
     }
 
     // smarter and faster

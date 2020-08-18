@@ -22,9 +22,9 @@ val s = ia.mapIndexed {
 }
 s
 s.map { it.first+it.second }
-val left = s.maxBy { it.second }!!
-val right = s.maxBy { it.first }!!
+val left = s.maxByOrNull { it.second }!!
+val right = s.maxByOrNull { it.first }!!
 left
 right
 right.first - left.first
-(0 until (len-1)).map { i -> (i+1 until len).map { j -> minOf(ia[j],ia[i]) * (j - i) }.max()!!}.max()
+(0 until (len-1)).map { i -> (i+1 until len).map { j -> minOf(ia[j],ia[i]) * (j - i) }.maxOrNull()!!}.maxOrNull()

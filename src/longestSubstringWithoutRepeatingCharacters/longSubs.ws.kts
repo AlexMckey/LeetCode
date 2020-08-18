@@ -27,7 +27,7 @@ fun lenLongSubs(s: String): Int =
     if (s.length == 1) 1
     else s.toSet().fold(listOf(s)){
             acc, c -> acc.flatMap { spl(it,c) }.distinct()}
-        .map { it.length }.max()!!
+        .map { it.length }.maxOrNull()!!
 
 var ls = listOf(str)
 ls
@@ -42,7 +42,7 @@ var subs = chars.fold(listOf(str)){
     acc, c -> acc.flatMap { spl(it,c) }.distinct()
 }
 subs
-subs.map { it.length }.max()
+subs.map { it.length }.maxOrNull()
 
 spl("a",'b')
 spl("abc",'b')
@@ -72,4 +72,4 @@ subs = "pwwkew".toSet().fold(listOf("pwwkew")){
         acc, c -> acc.flatMap { spl(it,c) }.distinct()
 }
 subs
-subs.map { it.length }.max()
+subs.map { it.length }.maxOrNull()

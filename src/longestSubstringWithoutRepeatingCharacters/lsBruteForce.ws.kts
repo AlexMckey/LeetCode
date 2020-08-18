@@ -7,8 +7,8 @@ s.indices
         val str = s.slice(it)
         (str.toSet().size == str.length) to str.length }
     .filter { it.first }
-    .maxBy { it.second }
-    ?.second ?: 0
+    .maxByOrNull { it.second }
+    ?.second
 
 fun allUnique(s: String, from: Int, to: Int): Boolean {
     val hs = HashSet<Char>()

@@ -4,7 +4,7 @@ object Solution {
     // use builtin function
     // Accepted	280 ms	40.5 MB	kotlin
     fun majorityElement(nums: IntArray): Int =
-        nums.groupBy { it }.maxBy { it.value.size }?.key ?: 0
+        nums.groupBy { it }.maxByOrNull { it.value.size }?.key ?: 0
 
     // Boyer-Moore Voting Algorithm
     // by using fold function

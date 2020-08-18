@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package longestPalindromicSubstring
 
 object Solution {
@@ -82,7 +84,7 @@ object Solution {
             val d = i - e
             l.add(minOf(d, l[i].first) to e-1)
         }
-        val res = l.maxBy { it.first }!!
+        val res = l.maxByOrNull { it.first }!!
         return seq.substring(res.second - res.first, res.second)
     }
 }

@@ -11,7 +11,7 @@ i++
 tl.all { it[i] == fw[i] }
 i++
 tl.all { it[i] == fw[i] }
-val minst = starr.minBy { it.length }!!
+val minst = starr.minByOrNull { it.length }!!
 minst
 
 val sl = minst.indices.map{i -> i to starr.all{it[i] == minst[i]}}

@@ -15,8 +15,8 @@ object Solution {
         }
         return if (s.length == 1) 1
         else s.toSet().fold(listOf(s)){
-                acc, c -> acc.flatMap { splt(it,c) }.distinct()}
-            .map { it.length }.max()!!
+                    acc, c -> acc.flatMap { splt(it,c) }.distinct()}
+                .map { it.length }.maxOrNull()!!
     }
 
     // BruteForse O(n^3) - in function style
@@ -31,7 +31,7 @@ object Solution {
                 (str.toSet().size == str.length) to str.length
             }
             .filter { it.first }
-            .maxBy { it.second }
+            .maxByOrNull { it.second }
             ?.second ?: 1
 
     // BruteForse O(n^3) - with cycles and unique check with HashSet
@@ -76,7 +76,6 @@ object Solution {
     //Runtime: 208 ms, faster than 83.12% of Kotlin online submissions for Longest Substring Without Repeating Characters.
     //Memory Usage: 36.1 MB, less than 35.16% of Kotlin online submissions for Longest Substring Without Repeating Characters.
     fun lenLongSubsSlideHM(s: String): Int {
-        val l = s.length
         val hm = HashMap<Char,Int>()
         var res = 0
         var i = 0
